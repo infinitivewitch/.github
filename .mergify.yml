@@ -1,0 +1,26 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - "#approved-reviews-by>=1"
+      - "#check-pending=0"
+      - "#check-failure=0"
+    actions:
+      merge:
+        method: squash
+  - name: Automatic merge for Mecha Sorceress pull requests
+    conditions:
+      - author=mechasorceress
+      - "#check-pending=0"
+      - "#check-failure=0"
+    actions:
+      merge:
+        method: squash
+  - name: Automatic merge for Dependabot pull requests
+    conditions:
+      - author=dependabot[bot]
+      - "#check-pending=0"
+      - "#check-failure=0"
+      - title~=^Bump [^\s]+ from ([\d]+)\..+ to \1\.
+    actions:
+      merge:
+        method: squash
