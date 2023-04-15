@@ -1,5 +1,12 @@
 collaborators:
   - username: mechasorceress
+branches:
+  - name: main
+    protection:
+      enforce_admins: false
+      required_linear_history: true
+      required_status_checks:
+        strict: true
 labels:
 - color: '#000000'
   description: This issue has been abdandoned
